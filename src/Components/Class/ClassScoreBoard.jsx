@@ -1,22 +1,22 @@
 import { Component } from "react";
 import "./styles/score-board.css";
+import { initialFishes } from "./ClassApp";
 
-const incorrectCount = 0;
-const correctCount = 0;
-const answersLeft = ["trout", "salmon", "tuna", "shark"];
 export class ClassScoreBoard extends Component {
   render() {
+     const answersLeft = initialFishes.filter((fish, index) => index === 0);
+
     return (
       <div id="score-board">
-        <div>Incorrect 🔻: {incorrectCount}</div>
+        <div>Incorrect 🔻: {this.props.incorrectCount}</div>
         <div id="choices-left">
           {answersLeft.map((answer) => (
             <div key={answer} className="choice">
-              {answer}
+            {answer}
             </div>
           ))}
         </div>
-        <div>Correct ✅: {correctCount}</div>
+        <div>Correct ✅: {this.props.correctCount}</div>
       </div>
     );
   }

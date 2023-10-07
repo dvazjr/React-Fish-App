@@ -1,7 +1,7 @@
 import { Component } from "react";
+import { correctCount } from "./ClassApp";
 
 const totalCount = 0;
-const correctCount = 0;
 
 export class ClassFinalScore extends Component {
   render() {
